@@ -47,12 +47,3 @@ class BodyAggregationStrategy implements AggregationStrategy {
         return oldExchange;
     }
 }
-In this example, the program sends multiple messages from the "direct:start" endpoint to a JMS queue and sets a unique correlation identifier using a UUID. Then it aggregates all the messages with the same correlation identifier into a single message and prints it to the console.
-
-It uses Apache Camel as a framework for implementing the Aggregator pattern. The route starts from the "direct:start" endpoint and sends multiple messages to the "jms:queue:parts" endpoint. Then it uses the aggregate method to group all messages with the same correlation identifier and the completion size set to 3.
-
-This example shows how the Aggregator pattern can be used to group related messages together and then process them as a single unit, improving the efficiency and consistency of the system.
-
-
-
-
